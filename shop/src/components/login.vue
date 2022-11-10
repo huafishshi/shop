@@ -36,7 +36,6 @@
             </el-form>
 
             <el-button type="primary" class="login_btn">登录</el-button>
-            <p>{{num}}</p>
         </div>
     </div>
 </template>
@@ -48,14 +47,14 @@
         name:"login",
         setup(){
             const store=useStore()
-            const count = store.state.count
-          const  data=reactive({
+            const count = store.state.number.count
+            const  data=reactive({
                 loginDate:{
                     username:"",
                     password:""
                 },
-              num:count
-          })
+                num:count
+            })
             return {...toRefs(data),}
         }
     }
